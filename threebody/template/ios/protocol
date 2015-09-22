@@ -1,0 +1,12 @@
+///////==========start 协议定义============
+
+
+@interface {{.Name}} : JSONModel <PMExtendAttributeModel>
+
+////属性声明
+@end
+
+@protocol {{.Name}} <NSObject>
+
+@end
+//////===========end 协议定义===============

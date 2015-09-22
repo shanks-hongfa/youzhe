@@ -1,0 +1,22 @@
+package {{.Package}};
+
+import taobao.auction.base.network.HttpHelper;
+import taobao.auction.base.network.HttpResponse;
+
+/**
+ * 这是一个自动生成的model文件，不要对该文件做任何修改
+ * 作者：{{.Author}}
+ * 时间：{{.CreateTime}}
+ */
+public class {{.Name}} {
+
+    public HttpResponse<{{.Model}}> query{{.Model}}({{.Params|handlerParams}}) {
+        {{.Request}} request = new {{.Request}}();
+        {{range  $key, $value :=.Params}}
+        request.{{$key}} = {{$key}};
+        {{end}}
+        HttpResponse<{{.Model}}> httpResponse = HttpHelper.request(request, {{.Model}}.class);
+        return httpResponse;
+    }
+
+}

@@ -1,0 +1,16 @@
+
+//
+//这是一个自动生成的model文件，不要对该文件做任何修改
+//作者：{{.Author}}
+//时间：{{.CreateTime}}
+//
+
+#import "JSONModel.h"
+{{ range $key, $value := .Properties }}{{$value|importRender}}{{end}}
+
+@interface {{.Name}} : JSONModel <PMSellerModel>
+{{.Properties|filedRender}}
+@end
+@protocol {{.Name}} <NSObject>
+
+@end
